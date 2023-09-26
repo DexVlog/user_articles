@@ -11,6 +11,11 @@ class ArticlesRepository {
     if (listDynamic == null) {
       return [];
     }
-    return listDynamic.map((item) => ArticleModel.fromJson(item)).toList();
+    final allArticles =
+        listDynamic.map((item) => ArticleModel.fromJson(item)).toList();
+
+    return allArticles
+        .where((articles) => articles.authorId == authorId)
+        .toList();
   }
 }
