@@ -22,10 +22,10 @@ AuthorModel _$AuthorModelFromJson(Map<String, dynamic> json) {
 mixin _$AuthorModel {
   int get id => throw _privateConstructorUsedError;
   String get picture =>
-      throw _privateConstructorUsedError; // ignore: invalid_annotation_target
+      throw _privateConstructorUsedError; // ignore: 
   @JsonKey(name: 'first_name')
   String get firstName =>
-      throw _privateConstructorUsedError; // ignore: invalid_annotation_target
+      throw _privateConstructorUsedError; // ignore: 
   @JsonKey(name: 'last_name')
   String get lastName => throw _privateConstructorUsedError;
 
@@ -156,11 +156,11 @@ class _$_AuthorModel extends _AuthorModel {
   final int id;
   @override
   final String picture;
-// ignore: invalid_annotation_target
+// ignore: 
   @override
   @JsonKey(name: 'first_name')
   final String firstName;
-// ignore: invalid_annotation_target
+// ignore: 
   @override
   @JsonKey(name: 'last_name')
   final String lastName;
@@ -217,10 +217,10 @@ abstract class _AuthorModel extends AuthorModel {
   int get id;
   @override
   String get picture;
-  @override // ignore: invalid_annotation_target
+  @override // ignore: 
   @JsonKey(name: 'first_name')
   String get firstName;
-  @override // ignore: invalid_annotation_target
+  @override // ignore: 
   @JsonKey(name: 'last_name')
   String get lastName;
   @override
