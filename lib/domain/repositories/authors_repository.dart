@@ -4,13 +4,13 @@ import 'package:user_articles/domain/models/author_model.dart';
 class AuthorsRepository {
   AuthorsRepository({required this.remoteDataSource});
 
-  final AuthorsMockedDataSource remoteDataSource;
+  final AuthorsRemoteDioDataSource remoteDataSource;
 
   Future<List<AuthorModel>> getAuthorModels() async {
-    final json = await remoteDataSource.getAuthors();
-    if (json == null) {
+    final getAuthorModels = await remoteDataSource.getAuthors();
+    if (getAuthorModels == null) {
       return [];
     }
-    return json.map((item) => AuthorModel.fromJson(item)).toList();
+     return getAuthorModels.map((item) => AuthorModel.fromJson(item)).toList();
   }
 }
