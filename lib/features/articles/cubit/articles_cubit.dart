@@ -2,7 +2,9 @@ import 'package:bloc/bloc.dart';
 import 'package:user_articles/app/core/enums.dart';
 import 'package:user_articles/domain/models/article_model.dart';
 import 'package:user_articles/domain/repositories/articles_repository.dart';
+import 'package:freezed_annotation/freezed_annotation.dart';
 
+part 'articles_cubit.freezed.dart';
 part 'articles_state.dart';
 
 class ArticlesCubit extends Cubit<ArticlesState> {
