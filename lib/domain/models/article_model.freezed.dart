@@ -20,7 +20,7 @@ ArticleModel _$ArticleModelFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$ArticleModel {
-// ignore: 
+// ignore: invalid_annotation_target
   @JsonKey(name: 'author_id')
   int get authorId => throw _privateConstructorUsedError;
   int get id => throw _privateConstructorUsedError;
@@ -120,6 +120,7 @@ class __$$_ArticleModelCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
+@factoryMethod
 class _$_ArticleModel implements _ArticleModel {
   _$_ArticleModel(
       @JsonKey(name: 'author_id') this.authorId, this.id, this.content);
@@ -127,7 +128,7 @@ class _$_ArticleModel implements _ArticleModel {
   factory _$_ArticleModel.fromJson(Map<String, dynamic> json) =>
       _$$_ArticleModelFromJson(json);
 
-// ignore: 
+// ignore: invalid_annotation_target
   @override
   @JsonKey(name: 'author_id')
   final int authorId;
@@ -177,7 +178,7 @@ abstract class _ArticleModel implements ArticleModel {
   factory _ArticleModel.fromJson(Map<String, dynamic> json) =
       _$_ArticleModel.fromJson;
 
-  @override // ignore: 
+  @override // ignore: invalid_annotation_target
   @JsonKey(name: 'author_id')
   int get authorId;
   @override

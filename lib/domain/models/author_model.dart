@@ -1,4 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:injectable/injectable.dart';
 // import 'package:json_annotation/json_annotation.dart';
 
 part 'author_model.g.dart';
@@ -7,7 +8,7 @@ part 'author_model.freezed.dart';
 @freezed
 class AuthorModel with _$AuthorModel {
   const AuthorModel._();
-
+@factoryMethod
   factory AuthorModel(
     int id,
     String picture,
@@ -17,6 +18,7 @@ class AuthorModel with _$AuthorModel {
     @JsonKey(name: 'last_name') String lastName,
   ) = _AuthorModel;
 
+@factoryMethod
   factory AuthorModel.fromJson(Map<String, dynamic> json) =>
       _$AuthorModelFromJson(json);
 

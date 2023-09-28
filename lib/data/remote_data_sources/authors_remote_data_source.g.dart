@@ -13,9 +13,7 @@ class _AuthorsRemoteRetrofitDataSource
   _AuthorsRemoteRetrofitDataSource(
     this._dio, {
     this.baseUrl,
-  }) {
-    baseUrl ??= 'https://my-json-server.typicode.com/adamsmaka/json-demo';
-  }
+  });
 
   final Dio _dio;
 
@@ -26,7 +24,6 @@ class _AuthorsRemoteRetrofitDataSource
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
-    // ignore: prefer_const_declarations
     final Map<String, dynamic>? _data = null;
     final _result = await _dio
         .fetch<List<dynamic>>(_setStreamType<List<AuthorModel>>(Options(
