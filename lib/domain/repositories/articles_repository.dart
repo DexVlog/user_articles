@@ -4,18 +4,27 @@ import 'package:user_articles/domain/models/article_model.dart';
 class ArticlesRepository {
   ArticlesRepository({required this.remoteDataSource});
 
-  final ArticlesRemoteDioDataSource remoteDataSource;
-
+  final ArticlesRemoteRetrofitDataSource remoteDataSource;
   Future<List<ArticleModel>> getArticlesForAuthorId(int authorId) async {
-    final listDynamic = await remoteDataSource.getArticles();
-    if (listDynamic == null) {
-      return [];
-    }
-    final allArticles =
-        listDynamic.map((item) => ArticleModel.fromJson(item)).toList();
+    final allArticles = await remoteDataSource.getArticles();
 
-    return allArticles
-        .where((articles) => articles.authorId == authorId)
-        .toList();
+    final articlesForAuthor =
+        allArticles.where((article) => article.authorId == authorId).toList();
+
+    return articlesForAuthor;
   }
 }
+
+//  Future<List<ArticleModel>> getArticlesForAuthorId(int authorId) async {
+//     final listDynamic = await remoteDataSource.getArticles;
+//     if (listDynamic == null) {
+//       return [];
+//     }
+//     final allArticles =
+//         listDynamic.map((item) => ArticleModel.fromJson(item)).toList();
+
+//     return allArticles
+//         .where((articles) => articles.authorId == authorId)
+//         .toList();
+//   }
+// }
