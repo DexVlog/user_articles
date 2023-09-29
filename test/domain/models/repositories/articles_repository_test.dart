@@ -16,7 +16,7 @@ void main() {
   });
 
   group('get', () {
-    test('', () async {
+    test('should filter data source results with provided author id', () async {
       //1
       when(() => articlesDataSource.getArticles()).thenAnswer((_) async => [
             ArticleModel(1, 555, 'content1', 'picture1'),
@@ -25,7 +25,7 @@ void main() {
             ArticleModel(4, 555, 'content4', 'picture4'),
           ]);
       //2
-      final result =await sut.getArticlesForAuthorId(555);
+      final result = await sut.getArticlesForAuthorId(555);
       //3
       expect(result, [
         ArticleModel(1, 555, 'content1', 'picture1'),
@@ -33,5 +33,14 @@ void main() {
         ArticleModel(4, 555, 'content4', 'picture4'),
       ]);
     });
+  });
+
+  test('Should call remoteDataSource.getArticles() method', () async {
+    //1
+    when(() => articlesDataSource.getArticles()).thenAnswer((_) async => []);
+    //2
+    sut.getArticlesForAuthorId(555);
+    //3
+    verify(() => articlesDataSource.getArticles()).called(1);
   });
 }
