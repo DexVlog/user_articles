@@ -8,17 +8,16 @@ part 'author_model.freezed.dart';
 @freezed
 class AuthorModel with _$AuthorModel {
   const AuthorModel._();
-@factoryMethod
+  @factoryMethod
+  @JsonSerializable(fieldRename: FieldRename.snake)
   factory AuthorModel(
     int id,
     String picture,
-    // ignore: invalid_annotation_target
-    @JsonKey(name: 'first_name') String firstName,
-    // ignore: invalid_annotation_target
-    @JsonKey(name: 'last_name') String lastName,
+    String firstName,
+    String lastName,
   ) = _AuthorModel;
 
-@factoryMethod
+  @factoryMethod
   factory AuthorModel.fromJson(Map<String, dynamic> json) =>
       _$AuthorModelFromJson(json);
 
